@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import FeaturesSection from '../components/FeaturesSection';
+import StatsSection from '../components/StatsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import CTASection from '../components/CTASection';
 import AboutSection from '../components/AboutSection';
 import ProgramsSection from '../components/ProgramsSection';
 import VerifyCertificateSection from '../components/VerifyCertificateSection';
@@ -29,7 +33,15 @@ const Index = () => {
   const renderSection = () => {
     switch (activeSection) {
       case 'home':
-        return <HeroSection onNavigate={handleNavigate} />;
+        return (
+          <>
+            <HeroSection onNavigate={handleNavigate} />
+            <FeaturesSection />
+            <StatsSection />
+            <TestimonialsSection />
+            <CTASection onNavigate={handleNavigate} />
+          </>
+        );
       case 'about':
         return <AboutSection />;
       case 'programs':
@@ -39,7 +51,15 @@ const Index = () => {
       case 'contact':
         return <ContactSection />;
       default:
-        return <HeroSection onNavigate={handleNavigate} />;
+        return (
+          <>
+            <HeroSection onNavigate={handleNavigate} />
+            <FeaturesSection />
+            <StatsSection />
+            <TestimonialsSection />
+            <CTASection onNavigate={handleNavigate} />
+          </>
+        );
     }
   };
 
